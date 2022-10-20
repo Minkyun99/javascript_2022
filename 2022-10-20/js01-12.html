@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증감연산자</title>
+    <style>
+        body {
+            height: 100%;
+        }
+        table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black;
+        }
+
+        th {
+            background: rgb(255, 249, 164);
+        }
+    </style>
+    <script>
+        let list = '';
+        console.log(typeof(list))
+
+        list += '<table>'
+        list += '<tr>'
+            list += '<th>증감연산자</th>'
+            list += '<th>설명</th>'
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>변수++</td>'
+            list += '<td>기존의 변수 값에 1을 더합니다.(후위)</td>'
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>++변수</td>'
+            list += '<td>기존의 변수 값에 1을 더합니다.(전위)</td>'
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>변수--</td>'
+            list += '<td>기존의 변수 값에 1을 뺍니다.(후위)</td>'
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>--변수</td>'
+            list += '<td>기존의 변수 값에 1을 뺍니다.(전위)</td>'
+        list += '</tr>'
+        list += '</table>'
+
+        
+
+        
+        let number = 10
+        list += '<table>'
+        list += '<tr>'
+            list += '<th>증감연산자</th>'
+            list += '<th>설명</th>'
+            list += `<th>예시 let number = ${number}</th>`
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>alert(number++)</td>'
+            list += '<td>number를 불러와서 1을 더함.</td>'
+            list += `<td>답 : ${number++}</td>`
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>alert(++number)</td>'
+            list += '<td>1을 더하고 number를 불러옴.</td>'
+            list += `<td>답 : ${++number}</td>`
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>alsert(number--)</td>'
+            list += '<td>number를 불러와서 1을 뺌.</td>'
+            list += `<td>답 : ${number--}</td>`
+        list += '</tr>'
+        list += '<tr>'
+            list += '<td>alsert(--number)</td>'
+            list += '<td>1을 빼고 number을 불러옴.</td>'
+            list += `<td>답 : ${--number}</td>`
+        list += '</tr>'
+        list += '</table>'
+
+        document.write(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
