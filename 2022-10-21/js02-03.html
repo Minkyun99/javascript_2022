@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            font: 20px times black;
+            
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            border: 0px solid none;
+            outline-style: none;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        let r = prompt('반지름을 입력하세요.')
+        console.log(typeof(number("r")))
+        
+        list = ''
+        list += `<h3> 입력하신 반지름의 값은 ${r} 입니다.</h3>`
+        list += `<h3> 원의 넓이는  ${r*r*3.14}  입니다. </h3>`
+        list += `<h3> 원의 둘레는  ${r*3.14*2}  입니다. </h3>`
+
+        document.write(list)
+
+        let A = prompt('달러환율은 몇인가요?')
+        let B = prompt('변환하고자 하는 달러는 얼마인가요?')
+        console.log(typeof(A-0))
+        console.log(typeof(B-0))
+
+        list = ''
+        list += "<h3>오늘 달러의 환율은 <mark>" + A +"</mark>입니다.</h3>"
+        list += `<h3>원화로  <mark>${A*B}</mark>  입니다.</h3>`
+        list += "<form action='https://finance.naver.com/marketindex/'><button type='submit'>오늘의 환율</button></form>"
+        
+
+        document.write(list)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

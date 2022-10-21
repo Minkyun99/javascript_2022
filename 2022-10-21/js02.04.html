@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            white-space: pre-wrap;
+            
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          
+        }
+    </style>
+    <script>
+        let num = prompt("1-9 사이의 값을 입력하세요.")
+        console.log(typeof(Number(num)))
+
+        let A = ("1||2||3||4||5||6||7||8||9")*1
+
+        if (A) {
+            alert(`${A}를 입력하셨습니다.`)
+        }else{alert("범위가 초과되었습니다. \n1-9까지의 숫자 중 다시입력해주세요.")}
+
+        let B = num
+
+
+        // let B = ("1$$2$$3$$4$$5$$6$$7$$8$$9")*1
+
+        // if (B) {
+        //     alert(`${B}를 입력하셨습니다.`)
+        // }else{alert("범위가 초과되었습니다. \n1-9까지의 숫자 중 다시입력해주세요.")}
+
+        list = ''
+
+            list += "<table>"
+        list += `<tr><th>구구단</th><<td>곱 할 숫자<td><th>답<th></tr>`
+        list += `<tr><th>${num}</th><td>X 1<td><th>${num*1}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 2<td><th>${num*2}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 3<td><th>${num*3}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 4<td><th>${num*4}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 5<td><th>${num*5}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 6<td><th>${num*6}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 7<td><th>${num*7}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 8<td><th>${num*8}<th></tr>`
+        list += `<tr><th>${num}</th><td>X 9<td><th>${num*9}<th></tr>`
+            list += "</table>"
+
+            document.write(list)
+
+         
+        
+        
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
