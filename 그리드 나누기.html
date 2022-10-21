@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 나누기</title>
+    <style>
+        .container {
+            display: grid;
+            /* grid-template-columns: 100px 100px 100px 200px;
+            grid-template-rows: 150px 150px; */
+            /*repeat, fr*/
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-rows: 50px 200px 50px;
+        }
+
+        .spn1 {
+            background-color: red;
+        }
+        .spn2 {
+            background-color: blue;
+        }
+        .spn3 {
+            background-color: green;
+        }
+        .spn4 {
+            background-color: black;
+        }
+        .spn5 {
+            background-color: grey;
+        }
+        .spn6 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="spn1">1</span>
+        <span class="spn2">2</span>
+        <span class="spn3">3</span>
+        <span class="spn4">4</span>
+        <span class="spn5">5</span>
+        <span class="spn6">6</span>
+    </div>
+    
+</body>
+</html>
