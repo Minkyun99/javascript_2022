@@ -51,6 +51,49 @@
             background-color: bisque;
             border: 2px solid black;
         }
+
+        .text {
+            margin-bottom: 20px;
+            font: 30px times bold;
+        }
+
+        .container1 {
+            width: 800px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .P {
+            transform: translateY(-100px);
+            width: 200px;
+            height: 200px;
+            background-image: url(./뽀로로\ 이미지.png);
+
+        }
+
+        .H {
+            transform: translateY(-100px);
+            width: 200px;
+            height: 200px;
+            background-image: url(./루피.png);
+        }
+
+        .C {
+            transform: translateY(-100px);
+            width: 200px;
+            height: 200px;
+            background-image: url(./크롱.png);
+        }
+
+        td:hover {
+            background-color: yellow;
+            transform: scale(1.2);
+            border: 1px solid black;
+        }
+
+
     </style>
 </head>
 <body>
@@ -74,6 +117,12 @@
     
             list = '';
             list += "<div class=container>"
+                list +="<div class=container1>"
+                    list +="<div class=P></div>"
+                    list +="<div class=C></div>"
+                    list +="<div class=H></div>"
+                list +="</div>"
+                list += "<div class=text>뽀로로와 함께 하는 구구단 놀이</div>"
             list += "<table>"
                 list += "<tr>"
                     for (let A=2; A<=9; A++) {
