@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table { 
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: center;
+            width: 300px;
+            height: 400px;
+            font: 15px bold;
+            border-radius: 10px;
+            border
+        }
+
+        td, th {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: rgb(253, 255, 159);
+        }
+
+        td {
+            background-color: white;
+        }
+
+        .container {
+            width: 800px;
+            height: 700px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(242, 190, 255);
+        }
+
+        .container2 {
+            width: 500px;
+            height: 1600px;
+            background-image: url(/img/제발\ 완성.png);
+            transform: translateY(100px);
+        }
+
+        .container3 {
+            background-color: white;
+            border-radius: 20px;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        let Money = prompt('예산을 입력하세요.')*1;
+        let spen = prompt('지출 금액을 입력하세요.')*1;
+        let change = Money-spen
+        list = '';
+list += "<div class=container>"
+    list += "<div class=container2></div>"
+    list += "<div class=container3><h3>당신의 거스름 돈은?</h3>"
+    list +=     `<h3> ${change}원 입니다. </h3></div>`
+    list += "<table>"
+        list += "<tr>"
+            list += `<th> 잔액 </th>`
+            list += `<td>  ${change}원  <td>`
+        list += "</tr>"
+
+
+        let man = (parseInt(change / 10000))
+        change = change % 10000
+        
+        let O_cheon = (parseInt(change / 5000))
+        change = change % 5000
+
+        let cheon = (parseInt(change / 1000))
+        change = change % 1000
+
+        let O_back = (parseInt(change / 500))
+        change = change % 500
+
+
+        let back = (parseInt(change / 100))
+        change = change % 100
+
+        let O_sib = (parseInt(change / 50))
+        change = change % 50
+
+        let sib = (parseInt(change / 10))
+        change = change % 10
+
+
+//         list = '';
+// list += "<div class=container>"
+//     list += "<div class=container2></div>"
+//     list += "<div class=container3><h3>당신의 거스름 돈은?</h3>"
+//     list +=     `<h3> ${change1}원 입니다. </h3></div>`
+//     list += "<table>"
+//         list += "<tr>"
+//             list += `<th> 잔액 </th>`
+//             list += `<td>  ${change1}  <td>`
+//         list += "</tr>"
+
+        list += "<tr>"
+            list += `<th> 1만원 권 </th>`
+            list += `<td> ${man} <td>`
+        list += `</tr>`
+
+        list += `<tr>`
+            list += `<th> 5천원 권 </th>`
+            list += `<td> ${O_cheon} <td>`
+        list += `</tr>`
+
+        list += `<tr>`
+            list += `<th> 1천원 권 </th>`
+            list += `<td> ${cheon} <td>`
+        list += `</tr>`
+
+        list += `<tr>`
+            list += `<th> 500원 </th>`
+            list += `<td> ${O_back} <td>`
+        list += `</tr>`
+
+        list += `<tr>`
+            list += `<th> 100원 </th>`
+            list += `<td> ${back} <td>`
+        list += `</tr>`
+
+        list += `<tr>`
+            list += `<th> 50원 </th>`
+            list += `<td> ${O_sib} <td>`
+        list += `</tr>`
+
+        list += `<tr>`
+            list += `<th> 10원 </th>`
+            list += `<td> ${sib} <td>`
+        list += "</tr>"
+    list += "<table>"
+list += "</div>"
+
+        document.write(list)
+    
+        
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
