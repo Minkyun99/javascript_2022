@@ -26,7 +26,8 @@
     </style>
     <script>
         let r = prompt('반지름을 입력하세요.')
-        console.log(typeof(number("r")))
+        r = Number(r)
+        // console.log(typeof(number("r")))
         
         list = ''
         list += `<h3> 입력하신 반지름의 값은 ${r} 입니다.</h3>`
