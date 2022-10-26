@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <script>
+        const arr = ['서울', '부산', '대구', '대전', '광주', '포항', '경주']
+        let i =0;
+
+        /* 입력을 받아 중지*/
+        // while(true){
+        //     alert(`${i}번째 반복입니다.`) 
+        //     i++
+        // }
+        
+        
+        // while(i<arr.length){
+        //     console.log(`%c${i}:${arr[i]}`, 'color:blue') 
+        //     i++
+        // }
+
+        // let ar = 0
+        // for (const ar in arr) {
+        //     console.log(`%c${ar}:${arr[ar]}`, 'color:green')
+        // }
+
+      
+
+        let sum = 0;
+        for (let i =1; i<=10; i++){
+            if(i%2==1)continue 
+            sum+=i
+            document.write(i+"까지 합은" + sum + "입니다.<br>") 
+    </script>
+</body>
+</html>

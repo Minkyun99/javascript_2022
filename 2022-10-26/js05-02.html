@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // for(let i=100;i>0;i-=2) {//i=i+2와 i+=2 식으로 변경가능하며 숫자와 식을 바꿔 값의 증가량을 바꿀 수 있다.
+        //     document.write(i+' ')
+        // } 
+
+
+            let list = "";
+            list += "<table border>"
+                list += '<tr>'
+                        for (j=1; j<=15; j++) {
+                            list += "<th>" + j + "</th>"}
+                            list += "</tr>"
+
+            list += "<tr>"
+            for (let i=1; i<=300; i++) {
+                    if (i%3==0){
+            list+= "<td>짝</td>"
+        }else if(i%5==0) {
+           list +=  "<td>WoW</td>"
+        }else if(i%15==0) {
+           list +=  "<td>와우</td>"
+        }else if(i%5==0 && i%15==0) {
+          list +=  "<td>몰라</td>"
+        }else{ list += "<td>" + i + '</td>'
+        }list += "</tr>"}
+        list += "</table>"
+   document.write(list)
+
+    </script>
+</body>
+</html>
+
+
+
