@@ -16,7 +16,7 @@ body.html {
     width: 100%;
     display: flex;
     position: relative;
-    transform: translateY(-300px);
+    transform: translateY(-120%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
