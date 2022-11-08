@@ -16,7 +16,7 @@
 }
 
 .story_title {
-    
+    /* display: flex; */
     padding-top: 20px;
     font-size: 50px;
     left : 1200px;
@@ -40,10 +40,10 @@
 
 .story_img1 {
     
-    width: 200px;
-    height: 70px;
-    padding-top: 100px;
-    background-image: url(/img/아냐\ 프사2.png);
+    width: 300px;
+    height: 200px;
+    /* padding-top: 100px; */
+    background-image: url(./story_img1.png);
 }
 
 .story_img1:hover {
@@ -52,9 +52,9 @@
 
 
 .story_img2 {
-    width: 200px;
-    height: 140px;
-    background-image: url(/img/아냐\ 프사2.png);
+    width: 300px;
+    height: 200px;
+    background-image: url(./storyimg_2.png);
 }
 
 .story_img2:hover {

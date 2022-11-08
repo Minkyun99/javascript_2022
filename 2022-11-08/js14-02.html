@@ -8,7 +8,32 @@
 </head>
 <body>
     <script>
-        
+        const arr = []
+        for(let i=0; i<10000; i++){arr.push(i)}
+
+        console.time('for - type1')
+        const cnt = arr.length
+        for ( let i = cnt; i>0; i--){}
+        console.timeEnd('for -type1')
+
+        console.time('for -type(10000)')
+        for (let i =0; i< arr.length; i++){}
+        console.timeEnd('for - type(10000)')
+
+        console.time('for -type(let)')
+        for (let i =0; i< arr.length; i++){}
+        console.timeEnd('for - type(let)')
+
+        console.time('for -type(forEach)')
+        arr.forEach(function(valye, index){})
+        console.timeEnd('for - type(forEach)')
+
+        console.time('for -type(for-in)')
+        for (let i =0; i< arr.length; i++){}
+        console.timeEnd('for - type(for-in)')
+
+
+
     </script>
 </body>
 </html>
