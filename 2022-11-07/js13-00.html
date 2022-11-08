@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*원본 파괴됨*/
+        // arr1 = [22,33,44,55,66,77] 
+        // const arr2 = arr1.reverse()
+        // console.log('arr1: '+arr1)
+        // console.log('arr2: '+arr2)
+
+        /*깊은 복사로 원본 보존*/
+        arr1 = [22,33,44,55,66,77] 
+        const arr2 = [...arr1].reverse()
+        console.log('arr1: '+arr1)
+        console.log('arr2: '+arr2)
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 만들기</title>
+    <script src="./js07-00-01"></script>
+</head>
+<body>
+
+    <script>
+        let C = [];
+        for(m=0; m<=44; m++)C.push(0);
+        
+        let list = '';
+        list += `<div>`
+        
+        for(j=1; j<=1000; j++){
+            let lot = [];
+            for(i=0; i<6; i++){
+                let A = Math.floor(Math.random()*45+1)
+                if(lot.indexOf(A)==-1){lot.push(A)}else{i--}               
+                }
+                // document.write(lot+'<br>')
+                list += `${j}번째는 [${lot}]<br>`
+
+                
+                for(k=1; k<46; k++){if(lot.indexOf(k)!==-1){C[k-1]++}
+                
+            }
+            
+        }
+
+        list += `</div>`
+
+        for(k=1; k<46; k++)
+           { document.write(`${k}번은 ${C[k-1]}번 나왔습니다.<br>`)}
+           document.write(list)
+
+    </script>
+    
+</body>
+</html>

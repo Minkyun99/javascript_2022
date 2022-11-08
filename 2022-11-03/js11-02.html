@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최소값 구하기</title>
+</head>
+<body>
+    <script>
+        // let a, b = 0;
+
+        let arr = [];
+        function A(a, b){
+                for(i=0; i<b; i++) {
+                
+                let B = 0;
+                B = Math.floor(Math.random()*a)+1
+                if(arr.indexOf(B)==-1){arr.push(B)}else{i--}
+            }
+            console.log(arr)   
+
+            let min = arr[0]
+            for(m=0; m<b-1; m++) {
+            if(min<arr[m+1]){
+                min = min
+            } else {
+                min = arr[m+1]
+            }
+            }
+            return min
+        }
+
+        // console.log(arr)
+        
+    </script>
+</body>
+</html>

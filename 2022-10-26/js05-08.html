@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임 만들기</title>
+</head>
+<body>
+    <script>
+        let A = parseInt(Math.random()*3)*1
+        // 1, 2, 3 중 임의의 숫자 뽑기
+
+        let 가위 = 바위 = 보 = 0
+
+        for (i=1; i <=5; i++) {
+            let choose = prompt("가위, 바위, 보 중 하나를 선택하세요.")
+            if (choose=="바위") {
+                가위 = 1*1, 바위 = 2*1, 보 = 3*1
+                if(A<2) {alert("이겼습니다.")}else if(A>2){alert("졌습니다.")}else{alert("비겼습니다.")}
+            }
+            if (choose=="가위") {
+                보 = 1*1, 가위 = 2*1, 바위 = 3*1
+                if(A<2) {alert("이겼습니다.")}else if(A>2){alert("졌습니다.")}else{alert("비겼습니다.")}
+            }
+            if (choose=="보"){
+                바위 = 1*1, 보 = 2*1, 가위 = 3*1
+                if(A<2) {alert("이겼습니다.")}else if(A>2){alert("졌습니다.")}else{alert("비겼습니다.")}
+            
+        }if(A>=2){alert("다시 도전해보세요.")}if(A<2){alert("당신이 이겼습니다. 끝!!");break}
+    }
+
+
+
+    </script>
+</body>
+</html>

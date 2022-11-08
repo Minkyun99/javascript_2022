@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    
+</head>
+<body>
+    
+    <canvas id="bar-chart" width="800" height="450"></canvas>
+    <script>
+
+        // let C = [];
+        //         for(m=0; m<=44; m++)C.push(0);
+                
+        //         let list = '';
+        //         list += `<div>`
+                
+        //         for(j=1; j<=1000; j++){
+        //             let lot = [];
+        //             for(i=0; i<6; i++){
+        //                 let A = Math.floor(Math.random()*45+1)
+        //                 if(lot.indexOf(A)==-1){lot.push(A)}else{i--}               
+        //                 }
+        //                 // document.write(lot+'<br>')
+        //                 list += `${j}번째는 [${lot}]<br>`
+        
+                        
+        //                 for(k=1; k<46; k++){if(lot.indexOf(k)!==-1){C[k-1]++}
+                        
+        //             }
+                    
+        //         }
+        
+        //         list += `</div>`
+        
+        //         for(k=1; k<46; k++)
+        //            { document.write(`${k}번은 ${C[k-1]}번 나왔습니다.<br>`)}
+        //            document.write(list)
+        
+                
+                let lotto_num = []
+                for(B=1; B<=45; B++){lotto_num.push(B)}
+        
+                let lotto_color = []
+                for (n=1; n<=45; n++) {lotto_color.push("#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850")}
+        
+                let lotto_data = []
+                for(m=1; m<=45; m++)lotto_data.push(0);
+                let list = '';
+                
+                
+                        for(j=1; j<=1000; j++){
+                    let lot = [];
+                    for(i=0; i<6; i++){
+                        let A = Math.floor(Math.random()*45+1)
+                        if(lot.indexOf(A)==-1){lot.push(A)}else{i--}               
+                        }
+                        list += `${j}번째는 [${lot}]<br>`
+                        for(k=1; k<46; k++){if(lot.indexOf(k)!==-1){lotto_data[k-1]++} 
+                    }                    
+                }
+        
+                list += `</div>`
+        
+                for(k=1; k<46; k++)
+                   { document.write(`${k}번은 ${lotto_data[k-1]}번 나왔습니다.<br>`)}
+                   document.write(list)
+        
+        
+                new Chart(document.getElementById("bar-chart"), {
+            type: 'bar',
+            data: {
+              labels: lotto_num,
+              datasets: [
+                {
+                  label: "로또 번호 통계",
+                  backgroundColor: lotto_color,
+                  data: lotto_data
+                }
+              ]
+            },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: '로또 통계'
+              }
+            }
+        });
+        
+               
+            </script>
+</body>
+</html>

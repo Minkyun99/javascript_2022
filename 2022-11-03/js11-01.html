@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글로벌변수/로컬변수</title>
+</head>
+<body>
+    <h1>변수의 유효범위</h1>
+    <script>
+        let num = 100
+        function globalN(){
+            document.write(`함수 내부에서 변수 값은 ${num}입니다.<br>`)
+            num = 200
+        }
+
+        globalN()
+        document.write(`호출이 끝난 뒤 변수 값은 ${num}입니다.`)
+    </script>
+    
+</body>
+</html>

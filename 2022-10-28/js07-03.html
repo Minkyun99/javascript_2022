@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <div id="chart_div"></div>
+
+
+    <!-- // const data_box = []
+    // data_box.push(['로또', '로또분석'])
+    // for(let i=0; i<45;i++) {
+    //     data_box.push(["'"+i+"번째", i])
+    // } -->
+
+    
+
+
+//     <script>
+        google.load('visualization', '1', {packages: ['bar']});
+        google.setOnLoadCallback(drawStuff);
+
+        function drawStuff() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Country');
+          data.addColumn('number', 'At least 80% needed for Beer money!');
+          data.addColumn({type: 'string', role: 'tooltip'});
+          data.addColumn('number','You earned your Beer money!');
+          data.addColumn({type: 'string', role: 'tooltip'});
+          data.addRows([
+            ['US', 80,'You hit 80% Enrollment!',10,'90% Total Enrollment'],
+            ['China', 80,'You hit 80% Enrollment!',10,'90% Total Enrollment'],
+            ['Japan', 80,'You hit 80% Enrollment!',5,'85% Total Enrollment'],
+            ['Germany', 70,'70% Enrolled',0,''],
+            ['France', 60,'60% Enrolled',0,'']
+          ]);
+
+    var options = {
+        isStacked:true,
+        title: 'You\'re school needs a minimum of 80% enrollment for you\'re free beer money',
+            
+         bars: 'horizontal',
+        legend: { position: 'right', maxLines: 1 },
+        hAxis: {
+            title: 'Percentage of students enrolled'},
+        axes: {
+            x: {
+              0: { side: 'top'}
+            }
+          },
+        height: 300
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

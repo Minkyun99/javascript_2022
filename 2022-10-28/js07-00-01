@@ -1,0 +1,45 @@
+let C = [];
+        for(m=0; m<=44; m++)C.push(0);
+        
+        let list = '';
+        list += `<div>`
+        
+        for(j=1; j<=1000; j++){
+            let lot = [];
+            for(i=0; i<6; i++){
+                let A = Math.floor(Math.random()*45+1)
+                if(lot.indexOf(A)==-1){lot.push(A)}else{i--}               
+                }
+                // document.write(lot+'<br>')
+                list += `${j}번째는 [${lot}]<br>`
+
+                
+                for(k=1; k<46; k++){if(lot.indexOf(k)!==-1){C[k-1]++}
+                
+            }
+            
+        }
+
+        list += `</div>`
+
+        // for(k=1; k<46; k++)
+        //    { document.write(`${k}번은 ${C[k-1]}번 나왔습니다.<br>`)}
+        //    document.write(list)
+
+
+           let a = '';
+           let num = 1
+           let B = 0
+           a += `<table>`
+       for(let j=1; j<=5; j++) {    
+           a+= `<tr>`
+           for(let i=1;i<=10;i++){
+           a += `<td>${num++}</td>`}
+           a+= `</tr><tr>`
+           for(let m=1;m<=10;m++){
+           a += `<td>${C[B++]}</td>`}
+           a += `</tr>`
+           }
+           a += `</table>`
+
+           document.write(a)
