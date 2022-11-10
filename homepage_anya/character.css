@@ -1,0 +1,21 @@
+.character {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.character_title {
+    width: 100%;
+    height: 100px;
+    background-color: azure;
+}
+
+.character_text1 {
+    font-size: 100px;
+    font-weight: bolder;
+    
+}
