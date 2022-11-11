@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <script src="./js16-04.js"></script> -->
+
+    <script>
+
+        let A;
+        let B = 5;
+        let C;
+
+    function start () {
+        A = setTimeout(()=>console.log('5'),1000)
+        C = setInterval(()=>{B-- 
+        console.log(`${B}`)},1000)
+
+    function stop () {
+        setTimeout(()=>{
+        clearTimeout(A)
+        clearInterval(C)
+        alert('꽝!')})}}
+
+        setTimeout(()=>{
+        clearTimeout(A)
+        clearInterval(C)
+        alert('꽝!')},5000)
+
+    </script>
+
 </head>
 <body>
+    <button onclick='start()'>나를 눌러봐</button>
+    <button onclick='stop()'>나를 멈춰봐</button>
+
     <script>
 //         const id1 = setTimeout(()=>console.log('1초 뒤에 실행됨'),1000)
 //         let count = 0;
@@ -18,18 +47,20 @@
 //     clearInterval(id2)
 //     },8000)
 
-    <button onclick='function'>나를 눌러봐</button>
+    
     // const A = setTimeout(()=>console.log('5'),1000)
-    let B = 5;
-    const C = setInterval(()=>{B-- 
-        console.log(`${B}`)},1000)
+    // let B = 5;
+    // const C = setInterval(()=>{B-- 
+    //     console.log(`${B}`)},1000)
 
-    SetTimeout(()=>{
-        // clearTimeout(A)
-        clearInterval(C)
-        alert('꽝!')},5000)
+    // SetTimeout(()=>{
+    //     clearTimeout(A)
+    //     clearInterval(C)
+    //     alert('꽝!')},5000)
 
-        document.write(button)
+
+
+        
 
 
     </script>
