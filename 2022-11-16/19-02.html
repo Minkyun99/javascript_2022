@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const product = {
+        //     제품명 : '70 건조 망고',
+        //     유형 : '당절임'
+        // }
+
+        // console.log(product['제품명'])
+        // console.log(product.제품명)
+        // console.log(product.length)
+
+
+        // //개별객체생성
+        const employee1 = {
+            'name' : 'a',
+            'age' : 10,
+        }
+
+        const employee2 = {
+            'name' : 'b',
+            'age' : 20,
+        }
+
+        const employee3 = {
+            'name' : 'c',
+            'age' : 30,
+        }
+        var employees = [employee1,employee2,employee3]
+        employees.forEach(function(emp,i){
+            console.log(emp.name)
+        })
+
+
+        // //간단하게 생성자를 ㅣㅇ용한 방법
+        // function employee(name, age) {
+        //     this.name = name;
+        //     this.age = age; 
+        // }
+
+        // var employee4 = [new employee('ㄱ',10,), new employee('ㄴ',20), new employee('ㄷ',20,)]
+        // employee4.forEach(function(emp,i){
+        //     console.log(emp.name+"/"+emp.age)
+        // })
+
+
+        // const car1 = {
+        //     'name' : 'Genesis',
+        //     'brand' : 'Hyundae'}
+
+        //     var cars = [car1]
+        //     cars.forEach(function(N,B){
+        //         console.log(`${B.brand}의 ${N.name}`)
+        //     })
+        
+
+
+        function carr(brand, name){
+            this.brand = brand;
+            this.name = name; 
+        }
+
+        var cars = [new carr('Hyundae','Genesis'), new carr('KIA','CARNIVAL'), new carr('SSANGYONG','KAN')]
+        cars.forEach(function(C){console.log(`${C.brand}의 ${C.name}`)})
+        
+
+    </script>
+</body>
+</html>

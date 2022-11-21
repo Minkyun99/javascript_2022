@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fn()
+        function fn(){
+            console.log('나는 호이스팅 되었어')
+        }
+
+        
+        function fn(){
+            console.log(bb)
+        }
+        let bb = '나는 호이스팅 되었어'
+        fn()
+
+
+        /*변수가 가장 상단으로 올라와서 순서가 바뀜*/
+
+        // let bb;
+        // fn()
+        // function fn(){
+        //     console.log(bb)
+        // }
+
+        // bb = '나는 호이스팅 되었어'
+
+        //변수의 선언
+        //함수의 선언이 상단으로 끌어올려져 먼저 값이 들어가지 않고 상단에서 초기화되는 현상
+
+        /*호이스팅이 되지 않는 상태*/
+        //함수를 선언과 동시에 생성할 때
+        //const fn = function(){} //호이스팅 안 됨.
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./js16-05.js"></script> -->
+    <script>
+        let A;
+
+function start(){
+    let B = 0;
+    let C = 0;
+A = setInterval(()=>{
+    B++;
+    if(B<60){console.log(`${B}초`)}
+    else{console.log(`${parseInt(B/60)}분 ${parseInt(C++)}초`)}
+},1000
+)
+}
+
+function stop (){
+    setTimeout(() => {
+        console.log('타이머 끝')
+        clearInterval(A)
+})
+}
+
+    </script>
+</head>
+<body>
+    <button onclick="start()">제발 시작해라</button>
+    <button onclick="stop()">한번에 끝내자</button>
+</body>
+</html>

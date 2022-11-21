@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const object = {
+        //     ko: '빵',
+        //     en : 'bread',
+        //     ja : 'パン',
+        //     fr: 'pain',
+        //     es: 'pan',
+        //     lang: {
+        //         ko:'한국어',
+        //         en:'영어',
+        //         ja: '일본어',
+        //         fr: '프랑스어',
+        //         es: '스페인어'
+        //     },
+        //     print: function (lang){
+        //         console.log(`${this.ko}는 ${this.lang[lang]}로 ${this[lang]}입니다.`)
+        //     }
+        // }  object.print('es')
+
+
+     
+
+
+var new_Inyeon = new Array('새로운 사람 만날 수 있다.', '더 좋은 사람 만날 수 있다.', '크리스마스 전에 만날 수 있다.','앞으로 만날 사람은 더 잘생겼다.', '내일은 더 좋은 사람이 온다.','내 사람은 이 세상에 태어나있다.');
+
+document.write(randomItem(new_Inyeon), ' ');
+
+function randomItem(a) {
+  return a[Math.floor(Math.random() * a.length)];
+}
+      
+    </script>
+</body>
+</html>
