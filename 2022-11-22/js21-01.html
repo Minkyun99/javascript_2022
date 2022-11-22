@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str1 = '                  안녕하세요                     '
+        console.log(str1)
+        console.log(str1.trim())
+        
+        
+
+
+        let str2 = 'a,b,c,d,e,f,g,h'
+        let str2_ar = str2.split(',')
+        console.log(str2_ar)
+
+        let str3 = `제가 만약
+        나비라면
+        훨훨
+        날아갈텐데`
+
+
+        /*망함*/
+        // let D = str3.replace("\n","")
+        // let E = D.replace(" ","")
+        // let F = E.split('\n')
+        // console.log(F)
+        
+
+        /*split으로 나누고 난 이후 배열 하나하나 공백 제거*/
+        // let str3_ar = str3.split('\n')
+        // str3_ar[1] = str3_ar[1].trim()
+        // str3_ar[2] = str3_ar[2].trim()
+        // str3_ar[3] = str3_ar[3].trim()
+        // console.log(str3_ar)
+
+        // let B = str3_ar.map(v=>v=v.trim())
+        // console.log(B)
+    </script>
+</body>
+</html>
