@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키 코드 사용하기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const h1 = document.querySelector('h1')
+            const print = event => {
+                let list = ''
+                list += `alt : ${event.altKey}<br>`
+                list += `ctrl : ${event.ctrlKey}<br>`
+                list += `shift : ${event.shiftKey}<br>`
+                list += `code : ${typeof(event.code) !== undefined}` ? event.code : event.keyCode<br>`
+                h1.innerHTML = 'list'
+            }
+        
+            addEventListener('keydown', print)
+            addEventListener('keyup', )
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

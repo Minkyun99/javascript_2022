@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            let counter = 0
+            const h1 = document.createElement('h1')
+            const button = document.createElement('button')
+            const button1 = document.createElement('button')
+
+            h1.textContent = `클릭횟수 : ${counter}`
+            h1.style.userSelect = 'none'
+            
+            
+
+            button.textContent = '이벤트 연결 버튼'
+            button.style.cursor = 'pointer'
+            button.style.border = 'none'
+            button.style.backgroundColor = 'darkgreen'
+            button.style.color = 'white'
+            button.style.width = '100px'
+            button.style.height = '50px'
+
+            button1.textContent = '이벤트 제거 버튼'
+            button1.style.cursor = 'pointer'
+            button1.style.border = 'none'
+            button1.style.backgroundColor = 'darkgreen'
+            button1.style.color = 'white'
+            button1.style.width = '100px'
+            button1.style.height = '50px'
+
+
+            // h1.addEventListener('click',(event)=>{
+            //     counter++
+            //     h1.textContent = `클릭횟수 : ${counter}`
+            // })
+            
+            const fn =_=>h1.innerHTML = `클릭횟수 : ${counter++}`
+
+            button.addEventListener('click',()=>{
+                h1.addEventListener('click',fn )
+                        button.innerHTML = '이벤트 연결 중'
+                        button1.innerHTML = '이벤트 종료'
+                        counter++
+                        h1.textContent = `클릭횟수 : ${counter}`})
+
+            button1.addEventListener('click',()=>{
+                h1.removeEventListener('click',fn)
+                        button.innerHTML = '이벤트 연결'
+                        button1.innerHTML = '이벤트 종료 됨'
+                        counter = 0;
+                        h1.textContent = `클릭횟수 : ${counter}`})
+           
+           
+   
+                 
+                
+                    // button.setAttribute('onclick','buttonStart()')
+                    // button1.setAttribute('onclick','buttonStop()')
+
+        
+            document.body.append(h1, button, button1)
+
+           
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

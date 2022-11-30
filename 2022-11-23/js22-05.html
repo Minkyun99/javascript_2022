@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+    </style>
+    <script>
+
+        document.addEventListener('DOMContentLoaded',()=>{
+
+            const A = document.querySelectorAll('.A')
+
+            Array.from(A).reduce((acc,cur,idx)=>{
+
+                const width = (idx + 5) * 50
+                const src = `http://placekitten.com/${width}/${width}`
+                cur.src = src
+            },0)
+        })
+
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const B = document.querySelectorAll('.B')
+
+            B.forEach((v,i)=>{
+                v.innerHTML = `${150+(i*50)}X${150+(i*50)}`
+                v.style.textAlign = 'center'
+                v.style.color = 'black'
+                v.style.font = '20px times bolder'
+            })
+            
+        })
+
+    </script>
+</head>
+<body>
+    <img src="" alt="" class="A"> <h1 class="B"></h1>
+    <img src="" alt="" class="A"> <h1 class="B"></h1>
+    <img src="" alt="" class="A"> <h1 class="B"></h1>
+    <img src="" alt="" class="A"> <h1 class="B"></h1>
+    <img src="" alt="" class="A"> <h1 class="B"></h1>
+    <img src="" alt="" class="A"> <h1 class="B"></h1>
+    <img src="" alt="" class="A"> <h1 class="B"></h1>
+    
+    
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            /*태그 조차 없음*/
+            display: none;
+            /*태그 공간이 남아있음*/
+            visibility: hidden;
+        }
+        
+    </style>
+    <script>
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const A = document.createElement('div')
+            const B = document.createElement('div')
+            const C = document.createElement('div')
+            const D = document.createElement('div')
+            const E = document.createElement('button')
+            const F = document.createElement('button')
+
+            F.addEventListener('click',end)
+            
+            
+            B.style.width = '200px'
+            B.style.height = '200px'
+            B.style.borderRadius = '100px'
+
+            C.style.width = '200px'
+            C.style.height = '200px'
+            C.style.borderRadius = '100px'
+
+            D.style.width = '200px'
+            D.style.height = '200px'
+            D.style.borderRadius = '100px'
+
+            A.style.width = '800px'
+            A.style.height = '300px'
+            A.style.backgroundColor = 'black'
+            A.style.display = 'flex'
+            A.style.flexDirection = 'colum'
+            A.style.alignItems = 'center'
+            A.style.justifyContent = 'space-around'
+
+            E.textContent = 'start'
+            E.style.width = '100px'
+            E.style.height = '50px'
+            E.style.cursor = 'pointer'
+            E.style.border = 'none'
+            E.style.backgroundColor = 'silver'
+            E.style.marginTop = '50px'
+            E.style.marginLeft = '50px'
+            E.style.borderRadius = '20px'
+
+            F.textContent = 'start'
+            F.style.width = '100px'
+            F.style.height = '50px'
+            F.style.cursor = 'pointer'
+            F.style.border = 'none'
+            F.style.backgroundColor = 'silver'
+            F.style.marginTop = '50px'
+            F.style.marginLeft = '50px'
+            F.style.borderRadius = '20px'
+            
+            
+            F.textContent = '멈추거라'
+
+
+            A.appendChild(B)
+            A.appendChild(C)
+            A.appendChild(D)
+
+            B.setAttribute('id','G_L') 
+            C.setAttribute('id','Y_L') 
+            D.setAttribute('id','R_L') 
+            E.setAttribute('onclick','B_on()') 
+             
+            
+
+            document.body.append(A,E,F)
+          
+            
+            
+
+        })
+            let id1=id2=id3 = 0
+            const B_on =_=>{
+                G_L.style.backgroundColor = 'green'
+                Y_L.style.backgroundColor = 'black'
+                R_L.style.backgroundColor = 'black'
+                id1=setTimeout(C_on,5000)
+            }
+
+            const C_on =_=>{
+                Y_L.style.backgroundColor = 'yellow'
+                G_L.style.backgroundColor = 'black'
+                R_L.style.backgroundColor = 'black'
+                id2=setTimeout(D_on,2000)}
+
+            const D_on=_=>{
+                R_L.style.backgroundColor = 'red'
+                Y_L.style.backgroundColor = 'black'
+                G_L.style.backgroundColor = 'black'
+                id3=setTimeout(B_on,3000)
+            }
+
+            const end=()=>{
+                clearTimeout(id1)
+                clearTimeout(id2)
+                clearTimeout(id3)
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

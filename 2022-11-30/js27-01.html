@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const A = document.createElement('input')
+            const B = document.createElement('button')
+            const C = document.createElement('p')
+
+            A.setAttribute('type', 'text')
+            A.style.width = '200px'
+            A.style.height = '200px'
+            A.style.font = '50px times lighter'
+
+            B.style.border = '2px solid darkgreen'
+            B.style.backgroundColor = 'yellow'
+            B.style.width = '100px'
+            B.style.height = '40px'
+            B.textContent = '계산하기'
+            B.style.color = 'white'
+            B.style.margin = '20px'
+
+            
+
+            B.addEventListener('click',()=>{
+                let D = Number(A.value)
+                if(isNaN(D)){p.textContent = '숫자를 입력해주세요.'; return}
+
+                let E = D*1313
+                C.innerHTML = `환전 받으실 금액은 ${E}입니다.`
+                
+            })
+            document.body.append(A,B,C)  
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

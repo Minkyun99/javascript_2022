@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // document.addEventListener('DOMContentLoaded',()=>{
+        //     document.textContent = 'Headers'
+        //     document.style.background = '#000'
+        //     document.style.color = '#fff'
+        //     document.style.padding = '20px'
+        // })
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const header = document.querySelectorAll(`h1`)
+        
+            
+
+            // header.forEach((v,i)=>{
+                // if((i+1)%2==0){
+                //     v.style.background = "yellow"
+                //     v.style.color = 'black'
+                // }
+                // else{v.style.background = 'orange'
+                //      v.style.color = 'green'}
+                // v.style.display = `inline`
+                header.forEach((v,i)=>{
+                    v.innerHTML = `<span>HEADERS ${i+1}</span>`
+                if((i+1)%2==0){
+                    v.style.background = "yellow"
+                    v.style.color = 'black'
+                }
+                else{v.style.background = 'orange'
+                     v.style.color = 'green'}
+                v.style.width = '180px'
+                
+            // })
+                
+                // v.style.margin = '10px 10px 10px 10px'
+                // v.style.width = '180px'
+                // v.textContent = `HEADERS ${i+1}`    
+            })   
+        })
+
+        // document.addEventListener('DOMContentLoaded',()=>{
+        //     const header1 = document.querySelectorAll(`span`)
+
+        //     header1.forEach((v,i)=>{
+        //         if((i+1)%2==0){
+        //             v.style.background = "yellow"
+        //             v.style.color = 'black'
+        //         }
+        //         else{v.style.background = 'orange'
+        //              v.style.color = 'green'}
+        //         v.style.width = '180px'
+                
+        //     })
+        // })
+
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+
+    
+</body>
+</html>

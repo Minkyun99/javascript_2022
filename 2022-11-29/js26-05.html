@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>339페이지</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const input = document.createElement('input')
+            const button = document.createElement('button')
+            const p = document.createElement('p')
+            
+            input.setAttribute('type', 'text')
+            input.style.width = '200px'
+            input.style.height = '200px'
+            input.style.font = '50px times border'
+            
+            button.innerHTML = '계산'
+            button.style.border = 'none'
+            button.style.width = '50px'
+            button.style.height = '50px'
+            button.style.cursor = 'pointer'
+            button.style.backgroundColor = 'orange'
+            button.style.color = 'white'
+            button.style.marginLeft = '20px'
+            
+            document.body.append(input, button, p)
+            
+            button.addEventListener('click', ()=> {
+                const inch = Number(input.value)
+                if (isNaN(inch)) {
+                    p.textContent = '숫자를 입력해주세요.'
+                    return
+                }
+                const cm = inch *2.54
+                p.textContent = `${cm}cm`
+            })
+        } )
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const h1 = document.createElement('h1')
+            const button = document.createElement('button')
+            const button1 = document.createElement('button')
+            const button2 = document.createElement('button')
+
+            button.textContent = '실행'
+            button1.textContent = '멈춤'
+            button2.textContent = '정지'
+            h1.textContent = '버튼을 눌러주세요.'
+
+            function A(i){
+                setTimeout(()=>{
+                if(i==1){                    
+                    h1.innerHTML = `안녕하세요. 반갑습니다.`
+                }
+                else if(i==2){document.body.removeChild(h1)}
+                else if(i==3){
+                    const h1 = document.createElement('h1')
+                    h1.innerHTML = '기능이 정지되었습니다.'
+                    document.body.append(h1)}
+                else if(i==4){h1.innerHTML = '기능이 재생되었습니다.'}},3000)
+                }
+
+
+            button.addEventListener('click', (event)=>{
+                button.addEventListener('click', A(1))
+                button.innerHTML = '실행 중'
+                button1.innerHTML = '멈춤'
+                button2.innerHTML = '정지'
+                // setTimeout(A(1),3000)
+            })
+            
+            
+           button1.addEventListener('click', event=>{
+            button1.addEventListener('click', A(2))
+                button.innerHTML = '실행'
+                button1.innerHTML = '멈춤 상태'
+                button2.innerHTML = '정지'
+            })
+            
+            button2.addEventListener('click', (event)=>{
+                button.removeEventListener('click', A(1))
+                button1.removeEventListener('click', A(2))
+                button2.addEventListener('click',A(3))                
+                    button.innerHTML = '버튼 잠김'
+                    button1.innerHTML = '버튼 잠김'
+                    button2.innerHTML = '정지 중'
+                    })
+
+
+
+            document.body.append(h1, button, button1, button2)
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

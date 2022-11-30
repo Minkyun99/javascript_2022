@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // document.addEventListener("DOMContentLoaded",()=>{
+        //     const h1 = document.createElement('h1')
+        //     const div1 = document.createElement('div')
+        //     const div2 = document.createElement('div')
+        //     const span1 = document.createElement('span')
+        //     const span2 = document.createElement('span')
+        //     const span3 = document.createElement('span')
+        //     const span4 = document.createElement('span')
+        //     const br = document.createElement('br')
+
+
+        document.body.append(div1,div2,span1,br,span2)
+        div1.appendChild(span1)
+        div2.apendChild(ul).appendChild(li)
+
+        // })
+
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const A = document.createElement('h1')
+            const c1 = document.createElement('div')
+            const span = document.createElement('span')
+            const c2 = document.createElement('div')
+            const ul = document.createElement('ul')
+            const li = document.createElement('li')
+
+            
+            A.textContent = '다음 html형식을 JS로 작성하시오.'
+            c1.setAttribute('class', 'c1')
+            c2.setAttribute('class', 'c2')
+
+            c1.span.textContent = '1.문서객체 생성하기'
+            c1.span.textContent = '그리고 추가하기'
+            c2.ul.li.textContent = '생성하고'
+            c2.ul.li.textContent = '추가하고'
+            c2.ul.li.textContent = '문서읽고'
+
+            // span.innerHTML = '<a href='www.naver.com">네이버 링크</a>'
+            // span.innerHTML = '<a href='www.daum.net">다음 링크</a>'
+
+
+            document.body.appendChild('A')
+            document.body.appendChild('c1')
+            c1.appendChild('span')
+            document.body.appendChild('c2')
+
+            c2.appendChild('ul')
+            ul.appendChild('li')
+            document.body.appendChild('span')
+
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

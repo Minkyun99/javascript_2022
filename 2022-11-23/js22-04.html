@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        const rects = document.querySelectorAll('.rects');
+
+        Array.from(rects).reduce((acc,cur,ind)=>{
+            console.log(cur)
+            const width = (ind +1)*100
+            const src = `http://placekitten.com/${width}/250`
+            // cur.setAttribute('src',src)
+            cur.src = src
+        },0)
+    })
+</script>
+
+</head>
+<body>
+    <img src="" alt="" class="rects">
+    <img src="" alt="" class="rects">
+    <img src="" alt="" class="rects">
+    <img src="" alt="" class="rects">
+    <img src="" alt="" class="rects">
+</body>
+</html>
