@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분식집 메뉴 선택</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            const select = document.createElement('select')
+            document.body.append(select)
+            select.setAttribute('multiple', 'multiple')
+
+            let bunsik = ['돈까스', '떡볶이', '김밥', '쫄면', '순대', '참치마요 주먹밥', '쿨피스', 'A세트', 'B세트']
+            for(i=0; i<bunsik.length; i++){
+                let option = document.createElement('option')
+                option.textContent = `${bunsik[i]}`
+                select.appendChild(option)
+            }
+
+
+            select.addEventListener('change',(event)=>{
+                console.log(event.currentTarget.value)
+                if(event.currentTarget.value =='떡볶이'){
+                    const select1 = document.createElement('select')
+                    document.body.append(select1)
+                    let price = ['소자 15000원', '중자 20000원', '대자 25000원']
+                    for(i=0; i<price.length; i++){
+                        let pri = document.createElement('option')
+                        pri.textContent = `${price[i]}`
+                        select1.appendChild(pri)
+                    }
+                }
+            })
+
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
