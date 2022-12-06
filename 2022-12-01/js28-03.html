@@ -5,36 +5,178 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>분식집 메뉴 선택</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        img:hover {
+            transform: scale(1.3);
+        }
+
+        option:hover {
+            transform: scaleX(1.1);
+            background-color: #ffae00;
+            color : white;
+            transition: 0.1s linear;
+        }
+
+        option {
+            text-align: center;
+        }
+    </style>
     <script>
 
         document.addEventListener('DOMContentLoaded',()=>{
-            const select = document.createElement('select')
-            document.body.append(select)
-            select.setAttribute('multiple', 'multiple')
+            const container = document.createElement('div')
+            const main = document.createElement('div')
+            
+            const div2 = document.createElement('div')
+            const E = document.createElement('div')
+            const F = document.createElement('div')
+            const G = document.createElement('div')
+            const H = document.createElement('div')
+            const img = document.querySelectorAll('img')
 
-            let bunsik = ['돈까스', '떡볶이', '김밥', '쫄면', '순대', '참치마요 주먹밥', '쿨피스', 'A세트', 'B세트']
+            const select = document.createElement('select')
+            const div = document.createElement('div')
+            const div1 = document.createElement('div')
+            const div3 = document.createElement('div')
+            let select1
+            const p = document.createElement('p') 
+            
+            
+            document.body.append(container)
+            container.appendChild(main)
+            container.appendChild(div2)
+            container.appendChild(div)
+            container.appendChild(div3)
+            container.appendChild(div1)
+            
+            // document.body.append(div2, div, div3, div1)
+            
+            div2.appendChild(E)
+            div2.appendChild(F)
+            div2.appendChild(G)
+            div2.appendChild(H)
+            
+            
+            container.style.display = 'flex'
+            container.style.flexDirection = 'column'
+            container.style.height = '280px'
+            container.style.alignItems = 'center'
+            container.style.backgroundColor = '#fed06e'
+            container.style.width = '600px'
+            container.style.height = '1080px'
+
+            main.innerHTML = '<img src="./분식집간판.png">'
+            
+            
+            
+
+            
+            select.setAttribute('multiple', '')
+
+            
+            E.innerHTML = '<img style=width:100px src="./떡볶이.jpg">'
+            
+            F.innerHTML = '<img style=width:100px src="./순대.jpg">'
+            G.innerHTML = '<img style=width:100px; height=100px; src="./만두.png">'
+            H.innerHTML = '<img style=width:100px; height=100px; src="./튀김.png">'
+
+
+            div2.style.display = 'flex'
+            div2.style.justifyContent = 'center'
+            F.style.marginLeft = '20px'
+            G.style.marginLeft = '20px'
+            H.style.marginLeft = '20px'
+
+            div.style.marginTop = '30px'
+
+            div1.style.display = 'flex'
+            div1.style.flexDirection = 'column'
+            div1.style.alignItems = 'center'
+
+            
+
+
+            p.innerHTML = '주문하신 음식은 :'
+
+            div.style.display = 'flex'
+            div.style.flexDirection = 'column'
+            div.style.alignItems = 'center'
+            div.style.justifyContent = 'center'
+
+            select.style.width = '200px'
+            select.style.fontSize = '70px times lighter'
+            select.style.border = "1px solid blue"
+            select.style.boxShadow = "3px 3px 10px blue"
+            
+
+            p.style.marginTop = '20px'
+            p.style.color = 'white'
+            
+
+            let bunsik = ['돈까스', '떡볶이', '김밥', '쫄면', '만두', '순대', '참치마요 주먹밥', '쿨피스', 'A세트', 'B세트']
             for(i=0; i<bunsik.length; i++){
                 let option = document.createElement('option')
                 option.textContent = `${bunsik[i]}`
                 select.appendChild(option)
             }
-
-
+            
+            
             select.addEventListener('change',(event)=>{
-                console.log(event.currentTarget.value)
                 if(event.currentTarget.value =='떡볶이'){
-                    const select1 = document.createElement('select')
-                    document.body.append(select1)
+                    select1 = document.createElement('select')
+                    div3.appendChild(select1)
                     let price = ['소자 15000원', '중자 20000원', '대자 25000원']
                     for(i=0; i<price.length; i++){
                         let pri = document.createElement('option')
                         pri.textContent = `${price[i]}`
                         select1.appendChild(pri)
+                        
+                    }
+
+                    select.addEventListener('click', ()=>{
+                        const size = event.currentTarget.value
+                        p.innerHTML = `${size}`
+                    })
+                }
+            })
+            
+            
+            select.addEventListener('change',(event)=>{
+                const options = event.currentTarget.value
+                const list = []
+                for (const option of options){
+                    if(option.selected){
+                        list.push(option.textContent)
                     }
                 }
+                p.innerHTML = `주문하신 음식은 : ${list.join(',')}`
             })
 
 
+            const button = document.createElement('button')
+            button.innerHTML = '주문하기'
+            button.style.fontSize = '20px'
+            button.style.width = '100px'
+            button.style.height = '50px'
+
+            button.addEventListener('click',(event)=>{
+                const p1 = document.createElement('p')
+                p.innerHTML = ''
+                p1.innerHTML = '주문이 완료되었습니다.'
+                div1.appendChild(p1)
+                
+            })
+
+            div.appendChild(select)
+            
+            div1.appendChild(p)
+            div1.appendChild(button)
+
+
+            
 
 
         })

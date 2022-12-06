@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글 단위변환 프로그램</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const div = document.createElement('div')
+            const input1 = document.createElement('input')
+            const select1 = document.createElement('select')
+            const input2 = document.createElement('input')
+            const select2 = document.createElement('select')
+            document.body.appendChild(div).append(input1,select1,'=',input2,select2)
+
+            select1.setAttribute('class', 'A1')
+            select2.setAttribute('class', 'A')
+
+            
+
+            const omenu = ['킬로미터', '미터', '센치미터', '밀리미터', '마이크로미터']
+            const Z =[1000000000, 1000000, 10000, 1000 ,1]
+
+
+            for(let menu of omenu){
+                let option = document.createElement('option')
+                select1.appendChild(option)
+                option.innerHTML = menu
+            }
+
+            for(let menu of omenu){
+                let option = document.createElement('option')
+                select2.appendChild(option)
+                option.innerHTML = menu
+            }
+                    
+                         let B
+                         let D = 1000000000
+                        input1.addEventListener('keyup',()=>{
+                            B = Number(input1.value) 
+                            console.log(B)     
+                        })
+                        input2.addEventListener('keyup',()=>{
+                            B = Number(input1.value) 
+                            console.log(B)     
+                        })
+                        
+                        
+                        let G = 1000000000
+                        select1.addEventListener('change',()=>{
+                            let F = event.currentTarget.selectedIndex
+                            G=Z[F]
+
+                            E = (B*D)/G
+                            input1.value = E
+                            console.log(E)
+                        })
+
+                        let E
+                        
+                        select2.addEventListener('change',()=>{
+                            let C = event.currentTarget.selectedIndex
+                            D = Z[C]
+                            E = (B*G)/D
+                            input2.value=E
+
+
+                            
+                        })
+                    
+
+
+
+            // const calculate =_=> {
+            //     if(event.currentTarget.options=='킬로미터'&&event.currentTarget.options=='킬로미터'){
+            //         const A = Number(input.value)
+            //         let B = A*1
+            //         input2.setAttribute('value', `${B}`)}
+
+            //     else if(event.currentTarget.options=='킬로미터'&&event.currentTarget.options=='미터'){
+            //         const A = Number(input.value)
+            //         let B = A*100
+            //         input2.setAttribute('value', `${B}`)
+            //     }    
+            //     else if(select1.options=='킬로미터'&&select2.options=='센치미터'){
+            //         const A = Number(input.value)
+            //         let B = A*100000
+            //         input2.setAttribute('value', `${B}`)
+            //     }
+            //     else if(select1.options=='킬로미터'&&select2.options=='밀리미터'){
+            //         const A = Number(input.value)
+            //         let B = A*1000000
+            //         input2.setAttribute('value', `${B}`)
+            //     }
+            // }
+
+            // calculate();
+                       
+
+
+            // select1.addEventListener('change',()=>{
+            //     const A = event.currentTarget.options
+            //     const B = A.selectedIndex
+
+            //     let C = Number(options[index].value)
+            //     calculate()
+            // })
+
+            
+
+        //     select1.addEventListener('change',()=>{
+        //         if(event.currentTarget.value =='킬로미터'&&select2.event.currentTarget.value =='킬로미터'){
+        //                 input1.addEventListener('keyup',()=>{
+        //                     let B = Number(input1.value)
+        //                     let F = B*1
+        //                     input2.setAttribute('value',`${F}`)})
+                        
+        // }})
+                    
+                    
+            //     else if(event.currentTarget.value =='킬로미터'&&event.currentTarget.value =='미터'){
+            //         if (event.currentTarget.value == '킬로미터'){
+            //             let A = Number(input1.value)
+            //             let E = A*1000
+            //             input2.innerHTML = `${E}`
+            //         }
+                    
+                    
+
+            //     }else if(event.currentTarget.value =='킬로미터'&&event.currentTarget.value =='센치미터')
+        // })
+
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

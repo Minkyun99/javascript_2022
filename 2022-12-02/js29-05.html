@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>347p</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const input1 = document.createElement('input')
+            const span = document.createElement('span')
+            const h1 = document.createElement('h1')
+            const button = document.createElement('button')
+          
+            
+            input1.setAttribute('type', 'checkbox')
+            h1.innerHTML = '0 초'
+            button.innerHTML = '초기화 버튼'
+            span.append('타이머 활성화')
+            document.body.append(input1, span,h1,button)
+        
+
+            let count = 0
+            let time  
+            input1.addEventListener('change',(event)=>{
+            if(event.currentTarget.checked){
+                    time = setInterval(()=>{
+                    count++
+                    document.body.append(time)
+                    h1.innerHTML = count + '초'
+                },1000)}
+            else{clearInterval(time)}})
+
+            button.addEventListener('click',(event)=>{
+                clearInterval(time)
+                count = 0
+                h1.innerHTML = count + '초'
+                input1.checked = 'false'
+            })
+
+
+        })
+
+        //     let count = 0
+        //     const timer = document.createElement('div')
+             
+        //     function time() {
+        //             count++
+        //             document.body.append(timer)
+        //             timer.innerHTML = `${count} 초`
+        //         }
+
+        //     input1.addEventListener('click',(event)=>{
+        //     if(event.currentTarget.checked){
+        //         setInterval(time,1000)}
+        //         else{clearInterval(time,1000)
+        //         }
+        //     })
+
+        //     input2.addEventListener('click',(event)=>{
+        //         clearInterval(time)
+        //         count = 0
+        //         timer.innerHTML = `${count} 초`
+        //     })
+            
+
+        // })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

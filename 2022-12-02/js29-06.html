@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>348p</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const h1  = document.createElement('h1')  
+            const hr = document.createElement('hr')
+            const br = document.createElement('br')
+            h1.innerHTML = '#좋아하는 반려동물을 선택해주세요.'
+            const h1_1 = document.createElement('h1')
+            document.body.append(h1, br)    
+            
+            h1.style.backgroundColor = 'yellow'
+            h1.style.color = 'black'
+            h1.style.display = 'inline-block'
+            
+            let ani = ['강아지', '고양이', '햄스터', '모코코', '악어', '기린']
+            
+            let check
+            for(let i=0; i<ani.length; i++){
+                check =  document.createElement('input')
+                const span = document.createElement('span')
+                check.setAttribute('type', 'radio')
+                check.setAttribute('name', 'pet')
+                check.setAttribute('class', 'animal')
+                check.setAttribute('value', ani[i])
+                document.body.append(check, span, hr)
+                span.innerHTML = ani[i]
+
+                check.addEventListener('change',(event)=>{
+                    let checkbox = event.currentTarget
+                    h1_1.textContent = `좋아하는 반려동물은 (${checkbox.value})이시군요!`
+                    document.body.append(h1_1)})
+                
+            }
+            
+        })
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
