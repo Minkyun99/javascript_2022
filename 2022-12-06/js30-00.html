@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>움직이는 타이핑</title>
+    <style>
+        :root {
+            --ti-cursor-margin-left:0.1em;
+            --ti-cursor-color: #4848e2;
+            color: cadetblue;
+        }
+    </style>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const h1 = document.createElement('h1');
+            document.body.appendChild(h1)
+            h1.style.cssText = ''
+            h1.textContent = '가나다라마바사아자차카타파하'
+
+
+            new TypeIt(h1)
+            .pause(1000)
+            .delete(6,{delay:1000})
+            .type("아자아자아자")
+            .go();
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

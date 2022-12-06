@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const div = document.createElement('div')
+            const container = document.createElement('container')
+            const h1 = document.createElement('h1')
+            const input = document.createElement('input')
+            const label = document.createElement('label')
+            const button = document.createElement('button')
+
+            h1.innerHTML = '할 일 목록'
+            button.innerHTML = '추가하기'
+
+            label.style.margin = '10px'
+
+
+            document.body.append(div)
+            div.appendChild(h1)
+            div.appendChild(container)
+            container.appendChild(label)
+            label.appendChild(input)
+            container.appendChild(button)
+            
+            
+            
+            let todo = ''
+            input.addEventListener('keyup', ()=>{
+                todo = String(input.value)
+            })
+            
+            let list = [];
+            let list2 = [];
+            
+            
+            
+            
+            button.addEventListener('click', ()=>{
+                let container2 = document.createElement('div')
+                let label1 = document.createElement('label')
+                let input2 = document.createElement('input')
+                let button1 = document.createElement('button')
+                label1.textContent = todo
+                button1.innerHTML = '제거하기'
+                input2.type = 'checkbox'
+                
+                list.push = label1
+                list2.push = input2
+                
+                
+                div.appendChild(container2).append(input2,label1,button1)        
+            
+                input2.addEventListener('change',(event)=>{
+                    if(event.currentTarget.checked){
+                    label1.style.textDecoration = 'line-through'} else{label1.style.textDecoration = 'none'}
+    
+                })
+    
+                button1.addEventListener('click',(event)=>{
+                    let click = event.currentTarget
+                    div.removeChild(container2)
+                })
+            
+            })
+            
+           
+            
+            })
+        
+        // const line = document.querySelectorAll('label')
+
+// list.push(label.value)
+// list2.push(input2.value)
+
+// input2.addEventListener('click', (event)=>{
+//     for(i=0; i<list.length; i++){
+
+            // input.addEventListener('keyup', ()=>{
+            //     const span = document.createElement('span')
+            //     const input2 = document.createElement('input')
+            //     const button1 = document.createElement('button')
+            //     let todo = String(input.value)
+            //     button.addEventListener('click', ()=>{
+            //         span.innerHTML = todo
+            //         button1.innerHTML = '제거하기'
+            //             input2.type = 'checkbox'
+            //             container2.appendChild(input2)
+            //             container2.appendChild(span)
+            //             container2.appendChild(button1)
+                        
+
+            //             if(event.currentTarget.checked){
+            //                 span.style.textDecoration = 'overline'
+            //             }
+            //     })
+            // })
+        // })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

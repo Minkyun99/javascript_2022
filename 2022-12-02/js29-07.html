@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체동의</title>
+    <style>
+        h1 {
+            overflow: hidden;
+            white-space: inherit;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const main = document.createElement('div')
+            const h1 = document.createElement('h1')
+            const container = document.createElement('div')
+            const container2 = document.createElement('div')
+            document.body.append(main)
+            main.appendChild(h1)
+            main.appendChild(container2)
+            main.appendChild(container)
+            
+
+            main.style.backgroundColor = 'cadetblue'
+            main.style.width = '500px'
+            main.style.height = '500px'
+            main.style.display = 'flex'
+            main.style.flexDirection = 'column'
+            main.style.alignItems = 'center'
+
+
+            h1.innerHTML = '개인 정보제공 동의서'
+
+            container2.style.width = '300px'
+            container2.style.height = '200px'
+            container2.innerHTML = 'aaaaaaaaaa'
+            container2.style.border = '2px solid darkgreen'
+            container2.style.margin = '10px'
+
+            container.style.backgroundColor = 'white'
+            container.style.width = '200px'
+            container.style.height = '130px'
+            container.style.border = '2px solid darkgreen'
+
+
+
+            let check = ['1. 개인정보 수집', '2. 개인정보 제공 동의', '3. 마케팅 수신 동의', '4. 제 3자 정보제공 동의']
+            for(i=0; i<check.length; i++){
+                let div = document.createElement('div')
+                let dong = document.createElement('input')
+                let label = document.createElement('label')
+                label.innerHTML = check[i]
+                dong.type = 'checkbox'
+                dong.setAttribute('class', 'dongdong')
+                container.appendChild(div)
+                div.appendChild(label)
+                label.appendChild(dong)
+               
+            }
+
+            let div1 = document.createElement('div')
+            let all = document.createElement('input')
+            let label1 = document.createElement('label')
+            all.type = 'checkbox'
+            label1.innerHTML = '5. 전체 동의'
+            container.appendChild(div1)
+            div1.appendChild(label1)
+            label1.appendChild(all)
+            let dongs = document.querySelectorAll('.dongdong')
+
+            all.addEventListener('click', (event)=>{
+                for(i=0; i<check.length; i++){
+                if(event.currentTarget.checked==true){
+                    dongs[i].checked = true}
+                else{dongs[i].checked = false}
+               
+        }})
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

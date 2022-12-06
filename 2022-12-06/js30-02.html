@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 마우스 오른쪽 버튼 클릭 막기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const imgs = document.createElement('img')
+            document.body.append(imgs)
+
+            imgs.innerHTML = '<img src="./떡볶이.jpg">'
+
+            imgs.forEach((img)=>{
+                img.addEventListener('contextmenu', (event)=>{
+                    event.preventDefault()
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

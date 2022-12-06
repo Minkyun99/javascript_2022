@@ -25,9 +25,8 @@
             input1.addEventListener('change',(event)=>{
             if(event.currentTarget.checked){
                     time = setInterval(()=>{
-                    count++
-                    document.body.append(time)
-                    h1.innerHTML = count + '초'
+                    count += 1
+                    h1.textContent = `${count}초`
                 },1000)}
             else{clearInterval(time)}})
 
@@ -35,7 +34,7 @@
                 clearInterval(time)
                 count = 0
                 h1.innerHTML = count + '초'
-                input1.checked = 'false'
+                input1.checked = false
             })
 
 

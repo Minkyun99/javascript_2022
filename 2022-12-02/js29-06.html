@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>348p</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
             const h1  = document.createElement('h1')  
             const hr = document.createElement('hr')
             const br = document.createElement('br')
-            h1.innerHTML = '#좋아하는 반려동물을 선택해주세요.'
+            h1.innerHTML = '#내가 좋아하는 반려동물은?'
             const h1_1 = document.createElement('h1')
             document.body.append(h1, br)    
             
@@ -18,18 +19,29 @@
             h1.style.color = 'black'
             h1.style.display = 'inline-block'
             
+            
+
+           
+            
+
+            new TypeIt(h1)
+            .pause(1000)
+            .delete(14,{delay:1000})
+            .type("내가 좋아하는 반려동물을 선택해주세요.")
+            .go();
+            
             let ani = ['강아지', '고양이', '햄스터', '모코코', '악어', '기린']
             
             let check
             for(let i=0; i<ani.length; i++){
                 check =  document.createElement('input')
-                const span = document.createElement('span')
+                const label = document.createElement('label')
                 check.setAttribute('type', 'radio')
                 check.setAttribute('name', 'pet')
                 check.setAttribute('class', 'animal')
                 check.setAttribute('value', ani[i])
-                document.body.append(check, span, hr)
-                span.innerHTML = ani[i]
+                document.body.append(check, label, hr)
+                label.innerHTML = ani[i]
 
                 check.addEventListener('change',(event)=>{
                     let checkbox = event.currentTarget
