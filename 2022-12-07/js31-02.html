@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 저장</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <style>
+        button:hover {
+            transform: scale(1.5);
+            transform: translateY(-2px);
+            transition: 0.2s linear;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: #34667f;
+            border: 2px solid #2e324d;
+            color: white;
+            box-shadow: 2px 2px 3px rgb(0, 0, 0);
+        }
+    </style>
+    <script>
+            document.addEventListener('DOMContentLoaded', ()=>{
+            const container = document.createElement('div')
+            const container2 = document.createElement('div')
+            const h1 = document.createElement('h1')
+            const input = document.createElement('input')
+            const enter = document.createElement('button')
+            const del = document.createElement('button')
+            const All_del = document.createElement('button')
+            const pop = document.createElement('button')
+            const re = document.createElement('button')
+            
+
+            /*innerHTML*/
+            enter.innerHTML = '입력하기'
+            del.innerHTML = '선택 삭제하기'
+            All_del.innerHTML = '모두 제거'
+            pop.innerHTML = '마지막 요소 제거'
+            re.innerHTML = '중복 요소 제거'
+            h1.innerHTML = '오늘은 어떤 것을 해볼까요?'
+
+            
+            /*실행*/
+            document.body.append(container)
+            container.appendChild(h1)
+            container.appendChild(input)
+            container.appendChild(container2)
+            container2.appendChild(enter)
+            container2.appendChild(del)
+            container2.appendChild(All_del)
+            container2.appendChild(pop)
+            container2.appendChild(re)
+            
+            /*타이핑 디자인*/
+            new TypeIt(h1)
+            .pause(1000)
+            .delete(15,{delay:1000})
+            .type("값을 입력해주세요.")
+            .go();
+
+            /*style*/
+            container.style.backgroundColor = '#eedbb1'
+            container.style.width = '1000px'
+            container.style.height = '100%'
+
+            h1.style.position = 'relative'
+            h1.style.left = '20px'
+
+            container2.style.marginTop = '20px'
+
+            input.style.width = '200px'
+            input.style.height = '50px'
+            input.style.position = 'relative'
+            input.style.left = '20px'
+            input.style.brder = '5px solid grey'
+            input.style.boxShadow = '2px 2px 3px grey'
+            input.style.font = '40px bold times'
+            input.style.fontWeight = 'bold'
+            
+            
+            /*starting code*/
+            let arr = []
+            
+            /*local storage*/
+            const save = localStorage.getItem('input')
+            if(save){
+                h1.value = save
+                arr = save.split(',')
+                h1.innerHTML = `이전 실행 때의 마지막 값 : ${arr}`
+                console.log(arr)
+            }
+            
+            /*input 입력 값 받는 곳*/
+            let value
+            input.addEventListener('keyup',(event)=>{
+                value = input.value
+            })
+            
+            /*입력키*/
+            enter.addEventListener('click', (event)=>{
+                console.log(isNaN(value))
+                if(isNaN(value)){alert('값을 입력해주세요.'); return}
+                else{
+                arr.push(value)
+                h1.innerHTML = `입력한 값은 ${arr}입니다.`
+                localStorage.input = arr}
+                console.log(arr)                      
+                value = ''
+                input.value = ''
+            })
+
+            /*배열의 마지막 요소만 제거*/
+            pop.addEventListener('click', ()=>{
+                arr.pop()
+                input.value = ''
+                h1.innerHTML = `남은 값은 ${arr}입니다.`
+                localStorage.input = arr
+            })
+
+            /*배열의 모든 요소 제거*/
+            All_del.addEventListener('click', ()=>{
+                localStorage.clear()
+                input.value = ''
+                h1.innerHTML = '입력 값이 초기화 되었습니다.'
+                arr = []
+            })
+            
+    
+            /*input에 입력한 값만 배열에서*/
+            del.addEventListener('click', (event)=>{
+                for(i=arr.length-1; i>=0; i--){
+                    if(arr[i]==value){
+                        // const index = arr.indexOf(arr[i])
+                        arr.splice(i,1)
+                        input.value = ''
+                        h1.innerHTML = `남은 값은 ${arr}입니다.`
+                        localStorage.input = arr
+                        console.log(arr)
+                    }
+                }     
+            })
+
+            /*배열에서 중복 제거*/
+            re.addEventListener('click', ()=>{
+                input.value = ''
+                for(i=0; i<arr.length; i++){
+                    for(j=0; j<arr.length; j++){
+                        if(i != j&&arr[i]-arr[j] == 0){
+                            arr.splice(i,1)
+                            h1.innerHTML = `남은 값은 ${arr}입니다.`
+                        localStorage.input = arr
+                        console.log(arr)
+                    }
+                }
+            }
+            })
+
+            /*중복제거 강사님 풀이*/
+            // fix.addEventListener('click',(e)=>{
+                // const arrs = new Set(arr)    //set은 중복을 허용하지 않지만 배열을 모두 풀어버림
+                // arr = [...arrs]   //다시 배열을 만들어야 함.
+            // })
+            
+            
+            
+        })
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
