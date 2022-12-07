@@ -5,65 +5,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1 { 
+            overf        }
+    </style>
+    
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
             const div = document.createElement('div')
+            const container4 = document.createElement('div')
+            const container3 = document.createElement('div')
             const container = document.createElement('container')
             const h1 = document.createElement('h1')
             const input = document.createElement('input')
             const label = document.createElement('label')
             const button = document.createElement('button')
 
-            h1.innerHTML = '할 일 목록'
+            /*글자 넣기*/
+            h1.textContent = '오늘의 할 일은?'
             button.innerHTML = '추가하기'
 
+            document.body.append(div)
+            div.appendChild(container3)
+            div.appendChild(container4)
+            container3.appendChild(h1)
+            container3.appendChild(label)
+            label.appendChild(input)
+            container3.appendChild(button)
+            div.appendChild(container)
+
+
+            new TypeIt(h1)
+            .pause(1000)
+            .delete(9,{delay:1000})
+            .type("할 일을 적어주세요!")
+            .go();
+
+
+
+            /*style*/
+
+            h1.style.position = 'fixed'
+
+
+            label.style.position = 'relative'
+            label.style.top = '80px'
             label.style.margin = '10px'
 
+            button.style.position = 'relative'
+            button.style.top = '80px'
 
-            document.body.append(div)
-            div.appendChild(h1)
-            div.appendChild(container)
-            container.appendChild(label)
-            label.appendChild(input)
-            container.appendChild(button)
+            container4.style.position = 'relative'
+            container4.style.top = '80px'
+            container4.style.width = '400px'
+            container4.style.height = '300px'
+            container4.style.backgroundColor = '#f3ecd2'
+            container4.style.margin = '30px'
+            container4.style.overflowY = 'auto'
+
+            div.style.backgroundColor = '#eedbb1'
+            div.style.color = '#676636'
+            div.style.width = '500px'
+            div.style.height = '500px'
+            div.style.display = 'flex'
+            div.style.alignItems = 'center'
+            div.style.flexDirection = 'column'
+
+            button.style.color = '#676636'
+            button.style.backgroundColor = '#8dad88'
+            button.style.border = 'none'
+            button.style.cursor = 'pointer'
             
             
-            
+            /*starting code*/
+
+            /*local storage 저장*/
+            let arr = []
+
+            const save_day = localStorage.getItem('input')
+            if(save_day){
+                save = arr.value
+                for(i=0; i<arr.length; i++){}
+                
+            }
+
+
             let todo = ''
             input.addEventListener('keyup', ()=>{
                 todo = String(input.value)
             })
             
-            let list = [];
-            let list2 = [];
             
-            
-            
-            
+            /*버튼 입력 시 체크박스 라벨 버튼 생성*/
             button.addEventListener('click', ()=>{
+                input.value = ''
+
+                /*생성하기*/
                 let container2 = document.createElement('div')
                 let label1 = document.createElement('label')
                 let input2 = document.createElement('input')
                 let button1 = document.createElement('button')
+                let underline = document.createElement('hr')
+
+                /*innerHTML*/
                 label1.textContent = todo
                 button1.innerHTML = '제거하기'
                 input2.type = 'checkbox'
                 
-                list.push = label1
-                list2.push = input2
+                /*실행*/
+                container4.appendChild(container2).append(input2,label1,button1,underline)   
                 
-                
-                div.appendChild(container2).append(input2,label1,button1)        
-            
+                /*local storage 저장하기*/
+
+                localStorage.input = arr
+                console.log(arr)
+
+                /*스타일*/
+                button1.style.color = '#b25534'
+                button1.style.backgroundColor = '#eedbb1'
+                button1.style.border = 'none'
+                button1.style.cursor = 'poiter'
+
+                underline.style.color = '#2e324d'
+
+                /*선 긋기*/
                 input2.addEventListener('change',(event)=>{
                     if(event.currentTarget.checked){
                     label1.style.textDecoration = 'line-through'} else{label1.style.textDecoration = 'none'}
     
                 })
-    
+
+                /*체크박스 체크 시 삭제*/
                 button1.addEventListener('click',(event)=>{
                     let click = event.currentTarget
-                    div.removeChild(container2)
+                    container4.removeChild(container2)
                 })
             
             })
