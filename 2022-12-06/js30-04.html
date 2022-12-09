@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1 { 
-            overf        }
+        button:hover {
+            transform: translateY(-2px) scale(1.1);
+            transition: 0.2s linear;
+        }
     </style>
     
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
@@ -18,21 +20,40 @@
             const container3 = document.createElement('div')
             const container = document.createElement('container')
             const h1 = document.createElement('h1')
+            const container5 = document.createElement('div')
+            const span_date = document.createElement('span')
+            const span_time = document.createElement('span')
+            let date_check = document.createElement('input')
+            let time_check = document.createElement('input')
             const input = document.createElement('input')
             const label = document.createElement('label')
             const button = document.createElement('button')
+            const call_button = document.createElement('button')
 
             /*글자 넣기*/
             h1.textContent = '오늘의 할 일은?'
             button.innerHTML = '추가하기'
+            call_button.innerHTML = '불러오기'
+
+            /*속성 부여*/
+            date_check.setAttribute('type', 'checkbox')
+            time_check.setAttribute('type', 'checkbox')
 
             document.body.append(div)
             div.appendChild(container3)
+            div.appendChild(container5)
             div.appendChild(container4)
             container3.appendChild(h1)
             container3.appendChild(label)
+            container5.appendChild(date_check)
+            container5.appendChild(span_date)
+            span_date.append('날짜 선택')
+            container5.appendChild(time_check)
+            container5.appendChild(span_time)
+            span_time.append('시간 선택')
             label.appendChild(input)
             container3.appendChild(button)
+            container3.appendChild(call_button)
             div.appendChild(container)
 
 
@@ -45,104 +66,211 @@
 
 
             /*style*/
-
             h1.style.position = 'fixed'
 
+            label.style.cssText = "position: relative; top: 80px; margin: 10px;"
+                       
+            container4.style.cssText = "border-radius: 20px; box-shadow: 2px 2px 10px grey; position: relative; top: 80px; width: 400px; height: 300px; background-color : #f3ecd2; margin: 30px; overflow-y: auto;"
 
-            label.style.position = 'relative'
-            label.style.top = '80px'
-            label.style.margin = '10px'
+            div.style.cssText = "border-radius: 20px; background-color: #eedbb1; color: #676636; width: 500px; height: 500px; display: flex; align-items: center; flex-direction: column;"
 
-            button.style.position = 'relative'
-            button.style.top = '80px'
+            input.style.cssText = "box-shadow: 2px 2px 3px grey; border-radius: 8px; width: 200px; height: 30px; position: relative; top: 30px"
 
-            container4.style.position = 'relative'
-            container4.style.top = '80px'
-            container4.style.width = '400px'
-            container4.style.height = '300px'
-            container4.style.backgroundColor = '#f3ecd2'
-            container4.style.margin = '30px'
-            container4.style.overflowY = 'auto'
+            button.style.cssText = "border-radius: 3px; margin-right : 10px; box-shadow: 2px 2px 3px grey; color: #676636; background-color: #8dad88; border: none; cursor: pointer; position: relative; top: 110px"
 
-            div.style.backgroundColor = '#eedbb1'
-            div.style.color = '#676636'
-            div.style.width = '500px'
-            div.style.height = '500px'
-            div.style.display = 'flex'
-            div.style.alignItems = 'center'
-            div.style.flexDirection = 'column'
-
-            button.style.color = '#676636'
-            button.style.backgroundColor = '#8dad88'
-            button.style.border = 'none'
-            button.style.cursor = 'pointer'
+            call_button.style.cssText = "border-radius: 3px; box-shadow: 2px 2px 3px grey; color: #676636; background-color: #8dad88; border: none; cursor: pointer; position: relative; top: 110px"
             
-            
+            container5.style.cssText = "position: relative; top: 50px"
+
+            time_check.style.cssText = "margin-left : 10px;"
+
+           
             /*starting code*/
 
             /*local storage 저장*/
-            let arr = []
+            let arr = [];
+            let date = [];
+            let time = [];
+            let A;
 
-            const save_day = localStorage.getItem('input')
-            if(save_day){
-                save = arr.value
-                for(i=0; i<arr.length; i++){}
-                
-            }
+            let save_day = localStorage.getItem('save')
+            const save_date = localStorage.getItem('date')
+            const save_time = localStorage.getItem('time')
+            if(save_day){  
+                for(i=0; i<arr.length; i++){    
+                if(arr[i]==localStorage.getItem(`i`)){
+                    push.arr(i);
+                    A = localStorage.getItem(i)
+                    localStorage.setItem(`i`, A)
+                    key = key+arr.pop()
+                    console.log(arr)}
+
+                }}
+
+            
+            call_button.addEventListener('click', (event)=>{
+                /*생성하기*/
+                // save_day = arr.split(',')
+                if(save_date){date = save_date.split(',')}
+                if(save_time){time = save_date.split(',')}
+                for(i=0; i<arr.length; i++){
+                    re_try(localStorage.getItem(i))
+            }})
 
 
+            /*입력 값 미리 저장*/
             let todo = ''
             input.addEventListener('keyup', ()=>{
                 todo = String(input.value)
             })
-            
-            
-            /*버튼 입력 시 체크박스 라벨 버튼 생성*/
-            button.addEventListener('click', ()=>{
-                input.value = ''
 
+
+             /*체크박스 날짜 선택 값 미리 저장*/
+             let check_date
+             date_check.addEventListener('change',(event)=>{
+                check_date = event.currentTarget.checked
+            })
+
+            
+
+               /*체크박스 시간 선택 값 미리 저장*/
+               let check_time
+               time_check.addEventListener('change',(event)=>{
+                check_time = event.currentTarget.checked
+            })
+
+               
+            let key = 0 
+
+            function re_try(A){
                 /*생성하기*/
                 let container2 = document.createElement('div')
+                let addbox = document.createElement('div')
                 let label1 = document.createElement('label')
+                let input_date = document.createElement('input')
+                let input_time = document.createElement('input')
                 let input2 = document.createElement('input')
                 let button1 = document.createElement('button')
                 let underline = document.createElement('hr')
 
                 /*innerHTML*/
-                label1.textContent = todo
                 button1.innerHTML = '제거하기'
                 input2.type = 'checkbox'
-                
-                /*실행*/
-                container4.appendChild(container2).append(input2,label1,button1,underline)   
-                
-                /*local storage 저장하기*/
+                container2.setAttribute('data-key', key )
+                input_date.innerHTML = '마감날짜'
+                input_time.innerHTML = '마감시간'
 
-                localStorage.input = arr
-                console.log(arr)
+                /*실행*/
+                container4.appendChild(container2).append(addbox, input2,label1,button1,underline)    
+                
+                
+
+                /*속성 부여*/
+                input_date.setAttribute('type', 'date')
+                input_date.setAttribute('onkeydown', 'return false')
+                input_date.setAttribute('class', 'custom')
+                input_time.setAttribute('type', 'time')
 
                 /*스타일*/
-                button1.style.color = '#b25534'
-                button1.style.backgroundColor = '#eedbb1'
-                button1.style.border = 'none'
-                button1.style.cursor = 'poiter'
-
+                button1.style.cssText = "border-radius: 3px; float:right; margin-left: 5px; box-shadow: 2px 2px 3px black; color: #676636; background-color: #8dad88; border: none; cursor: pointer;"
+                container2.style.cssText = "margin : 10px;"
+                input_time.style.cssText = 'margin : 10px'
+                input_date.style.cssText = 'margin : 10px'
+                label1.style.cssText = 'margin-left : 5px'
+               
+                
+                /*선 긋기*/
                 underline.style.color = '#2e324d'
 
-                /*선 긋기*/
-                input2.addEventListener('change',(event)=>{
-                    if(event.currentTarget.checked){
-                    label1.style.textDecoration = 'line-through'} else{label1.style.textDecoration = 'none'}
-    
+                /*함수 실행 시 라벨에 들어갈 문구 각각 지정 가능*/
+                label1.innerHTML = A
+
+                /*날짜 선택 데이터 불러오기*/
+                if(check_date){addbox.appendChild(input_date)}
+
+                /*시간 선택 데이터 불러오기*/
+                if(check_time){addbox.appendChild(input_time)}
+
+                /*local storage 저장하기*/
+                arr.push(key)
+                localStorage.setItem('save', arr)  
+            for(i=0; i<arr.length; i++){
+                localStorage.setItem(key, todo)
+            }
+            const Key = key
+            /*날짜 데이터 저장*/
+                input_date.addEventListener('change',()=>{
+                    date.push(input_date.value)
+                    localStorage.save_date = date
+                })
+                
+                /*시간 데이터 저장*/
+                input_time.addEventListener('change',(event)=>{
+                    const time_now = input_time.value   
+                    time.push(time_now)
+                    localStorage.save_time = time
+                    input_time.value = ''
                 })
 
-                /*체크박스 체크 시 삭제*/
-                button1.addEventListener('click',(event)=>{
+                /*체크박스 선 긋기*/
+                input2.addEventListener('change',(event)=>{
+                    if(event.currentTarget.checked){
+                        label1.style.textDecoration = 'line-through'} else{label1.style.textDecoration = 'none'}
+                        
+                    })
+            
+                    
+                    /*제거하기 버튼 클릭 시 삭제*/
+            button1.addEventListener('click',(event)=>{
                     let click = event.currentTarget
                     container4.removeChild(container2)
-                })
+                    // for(i=0; i<arr.length; i++)
+                    // if(click.checked == i){
+                        console.log(Key)
+                        arr.splice(arr.indexOf(Key),1)
+                        localStorage.save = arr
+                        console.log(arr)
+                        
+                    })
+                    key++
+                    
+                }
+                
+           
+                
+                /*버튼 클릭 시 체크박스 라벨 버튼 생성*/
+            button.addEventListener('click', ()=>{
+                /*함수로 버튼 이벤트 실행*/
+                re_try(todo)
+                
+                
+                
+                
+                
+                
+                
+                /*입력값 초기화*/
+                input.value = ''
+                todo = ''
+                console.log(arr)
             
             })
+
+            // button.addEventListener('keyup', (event)=>{
+            //     let enter = 13
+            //     if(enter===event.keyCode){
+            //         re_try(todo)
+            //         /*local storage 저장하기*/
+            //         arr.push(todo)
+            //         localStorage.save = arr
+                
+            //         /*입력값 초기화*/
+            //         input.value = ''
+            //         todo = ''
+            //         console.log(arr)
+                
+            //     }
+            // })
             
            
             
