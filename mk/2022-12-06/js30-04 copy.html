@@ -91,26 +91,22 @@
             let arr = [];
             
 
-            let save_day = localStorage.getItem('data_box')
-            
+            let save_day = localStorage.getItem('save')??0
+            let data_read
 
             if(save_day!==0){
-
-                let data_read = JSON.parse(save_day)
+                data_read = JSON.parse(save_day)??[]
                 console.log(data_read)
-                for(i=0; i<data_read.length; i++){
-                    data_read[i]
-                }
-
-                console.log(data_read)
+                // for(i=0; i<data_read.length; i++){
+                //     data_read[i]
+                // }
                 
                 }
-
-            
+                
             call_button.addEventListener('click', (event)=>{
                 /*생성하기*/
                 for(i=0; i<data_read.length; i++){
-                    re_try(data_read[i].id, data_read[i].value, data_read[i].date, data_read[i].time)
+                    re_try(data_read[i].value, data_read[i].date, data_read[i].time)
             }})
 
 
@@ -153,16 +149,17 @@
                 /*innerHTML*/
                 button1.innerHTML = '제거하기'
                 input2.type = 'checkbox'
-                container2.setAttribute('data-key', key )
                 input_date.innerHTML = '마감날짜'
                 input_time.innerHTML = '마감시간'
-
+                
                 /*실행*/
                 container4.appendChild(container2).append(addbox, input2,label1,button1,underline)    
                 
                 
-
+                
                 /*속성 부여*/
+                container2.setAttribute('data-key', key)
+                button1.setAttribute('id', key)
                 input_date.setAttribute('type', 'date')
                 input_date.setAttribute('onkeydown', 'return false')
                 input_date.setAttribute('class', 'custom')
@@ -181,22 +178,28 @@
 
                 /*함수 실행 시 라벨에 들어갈 문구 각각 지정 가능*/
                 label1.innerHTML = A
-                input_date = B
-                input_time = C
+                // input_date.value = B
+                // input_time.value = C
 
                 /*날짜 선택 데이터 불러오기*/
-                if(check_date){addbox.appendChild(input_date)}
+                if(check_date){
+                    addbox.appendChild(input_date)
+                    input_date.value = B
+                }
 
                 /*시간 선택 데이터 불러오기*/
-                if(check_time){addbox.appendChild(input_time)}
+                if(check_time){
+                    addbox.appendChild(input_time)
+                    input_time.value = C
+                }
 
                 
-                /*local storage 저장하기*/
+                /*Json local storage 저장하기*/
                 data = {}
                 data.id = Key
                 data.value = todo;
-                data.date = input_date;
-                data.time = input_time;
+                data.date = input_date.value;
+                data.time = input_time.value;
 
                 arr.push({...data})
                 let data_box = JSON.stringify(arr)
@@ -216,32 +219,66 @@
             
                     
                     /*제거하기 버튼 클릭 시 삭제*/
-            button1.addEventListener('click',(event)=>{
-                    let click = event.currentTarget
+                button1.addEventListener('click',(event)=>{
+                    save_day = localStorage.getItem('save')??[]
+                    data_read = JSON.parse(save_day)
+                    console.log('data: '+data_read)
+                    // let click = event.currentTarget
+                    let selkey = event.currentTarget.id
                     container4.removeChild(container2)
+                    // arr.splice(arr.indexOf(Key),1)
+                    
+                    // const test = data_read.filter((v)=>{
+                    //     return v.id == selkey
+
+                    // })
+
+                    const test = data_read.findIndex((v)=>{
+                        return v.id == selkey
+                    })
+                    
+                    
+                        arr.splice(test,1)
                         
-                        arr.splice(arr.indexOf(Key),1)
-                        localStorage.save = arr
+                        let data_box = JSON.stringify(arr)
+                        localStorage.save = data_box
+                        // console.log(arr)
+                        
+                    })
+                    
+                    input_date.addEventListener('change', (event)=>{
+                        let date_checked = event.currentTarget.value
+                        data.date = date_checked
+
+
+                        
+                        // arr.({...data})
+
+                        let data_box = JSON.stringify(arr)
+                        localStorage.save = data_box
                         console.log(arr)
                         
                     })
-                    key++
                     
+                    input_time.addEventListener('change', (event)=>{
+                        let time_checked = event.currentTarget.value
+                        C = time_checked
+                        arr.push({...data})
+                        console.log(arr)
+                    })
+                    
+                    key++
                 }
+                    
+                
                 
            
                 
                 /*버튼 클릭 시 체크박스 라벨 버튼 생성*/
             button.addEventListener('click', ()=>{
                 /*함수로 버튼 이벤트 실행*/
-                re_try(todo)
-                
-                
-                
-                
-                
-                
-                
+                re_try(todo, 0, 0)
+                 
                 /*입력값 초기화*/
                 input.value = ''
                 todo = ''

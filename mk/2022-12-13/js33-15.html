@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        class User {
+            _name;
+            constructor(name){
+                this.name = name;
+            }
+        
+
+        get name() {
+            return this._name
+        }
+
+        set name(value){
+            if(value.length<4){
+                console.error('값이 너무 작습니다.')
+                return
+            }
+            this._name = value //#이나 _(언더바)를 사용하면 내부에서 변경 가능, 외부에서 변경 불가능
+        }
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

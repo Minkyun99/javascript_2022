@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const students = [];
+        students.push({이름:"구름", 국어 : 87, 영어 : 98, 수학: 88, 과학:90});
+        students.push({이름:"별이", 국어 : 87, 영어 : 98, 수학: 88, 과학:90});
+        students.push({이름:"겨울", 국어 : 87, 영어 : 98, 수학: 88, 과학:90});
+        students.push({이름:"바다", 국어 : 87, 영어 : 98, 수학: 88, 과학:90});
+
+        //객체를 처리하는 함수를 선업합니다.
+        
+        for (const s of students){
+            s.getSum = function(){
+                return thithis.국어+thithis.영어this+this.수학+this.과학
+            }
+
+            s.getAvg = function(){
+            return this.getSum(s)/4}
+        
+
+        let output = '이름\t총점\t평균\n'
+            const sum = s.국어+s.영어+s.수학+s.과학
+            const avg = sum / 4
+            output += `${s.이름}\t${sum}점\t${avg}점\n`
+        }
+        
+        console.log(students)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
